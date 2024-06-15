@@ -1,0 +1,316 @@
+{
+    "702": {
+        "name": "702",
+        "edges": [
+            {
+                "node": "Hall 7",
+                "weight": 1
+            }
+        ],
+        "type": "room"
+    },
+    "707": {
+        "name": "707",
+        "edges": [
+            {
+                "node": "Hall 6",
+                "weight": 1
+            }
+        ],
+        "type": "room"
+    },
+    "708": {
+        "name": "708",
+        "edges": [
+            {
+                "node": "Hall 6",
+                "weight": 1
+            }
+        ],
+        "type": "room"
+    },
+    "709": {
+        "name": "709",
+        "edges": [
+            {
+                "node": "Hall 5",
+                "weight": 1
+            }
+        ],
+        "type": "room"
+    },
+    "710": {
+        "name": "710",
+        "edges": [
+            {
+                "node": "Hall 5",
+                "weight": 1
+            }
+        ],
+        "type": "room"
+    },
+    "711": {
+        "name": "711",
+        "edges": [
+            {
+                "node": "Hall 4",
+                "weight": 1
+            }
+        ],
+        "type": "room"
+    },
+    "713": {
+        "name": "713",
+        "edges": [
+            {
+                "node": "Hall 3",
+                "weight": 1
+            }
+        ],
+        "type": "room"
+    },
+    "715": {
+        "name": "715",
+        "edges": [
+            {
+                "node": "Hall 3",
+                "weight": 1
+            }
+        ],
+        "type": "room"
+    },
+    "716": {
+        "name": "716",
+        "edges": [
+            {
+                "node": "Hall 4",
+                "weight": 1
+            }
+        ],
+        "type": "room"
+    },
+    "717": {
+        "name": "717",
+        "edges": [
+            {
+                "node": "Hall 2",
+                "weight": 1
+            }
+        ],
+        "type": "room"
+    },
+    "718": {
+        "name": "718",
+        "edges": [
+            {
+                "node": "Hall 2",
+                "weight": 1
+            }
+        ],
+        "type": "room"
+    },
+    "719": {
+        "name": "719",
+        "edges": [
+            {
+                "node": "Hall 1",
+                "weight": 1
+            }
+        ],
+        "type": "room"
+    },
+    "720": {
+        "name": "720",
+        "edges": [
+            {
+                "node": "Hall 1",
+                "weight": 1
+            }
+        ],
+        "type": "room"
+    },
+    "797": {
+        "name": "797",
+        "edges": [
+            {
+                "node": "Hall 3",
+                "weight": 1
+            }
+        ],
+        "type": "room"
+    },
+    "Stair 1": {
+        "name": "Stair 1",
+        "edges": [
+            {
+                "node": "Hall 2",
+                "weight": 1
+            }
+        ],
+        "type": "stair"
+    },
+    "Stair 2": {
+        "name": "Stair 2",
+        "edges": [
+            {
+                "node": "Hall 7",
+                "weight": 1
+            }
+        ],
+        "type": "stair"
+    },
+    "Hall 1": {
+        "name": "Hall 1",
+        "edges": [
+            {
+                "node": "Hall 2",
+                "weight": 1
+            },
+            {
+                "node": "719",
+                "weight": 1
+            },
+            {
+                "node": "720",
+                "weight": 1
+            }
+        ],
+        "type": "hall"
+    },
+    "Hall 2": {
+        "name": "Hall 2",
+        "edges": [
+            {
+                "node": "Hall 3",
+                "weight": 1
+            },
+            {
+                "node": "718",
+                "weight": 1
+            },
+            {
+                "node": "717",
+                "weight": 1
+            },
+            {
+                "node": "Hall 1",
+                "weight": 1
+            },
+            {
+                "node": "Stair 1",
+                "weight": 1
+            }
+        ],
+        "type": "hall"
+    },
+    "Hall 3": {
+        "name": "Hall 3",
+        "edges": [
+            {
+                "node": "Hall 4",
+                "weight": 1
+            },
+            {
+                "node": "713",
+                "weight": 1
+            },
+            {
+                "node": "715",
+                "weight": 1
+            },
+            {
+                "node": "797",
+                "weight": 1
+            },
+            {
+                "node": "Hall 2",
+                "weight": 1
+            }
+        ],
+        "type": "hall"
+    },
+    "Hall 4": {
+        "name": "Hall 4",
+        "edges": [
+            {
+                "node": "Hall 5",
+                "weight": 1
+            },
+            {
+                "node": "716",
+                "weight": 1
+            },
+            {
+                "node": "711",
+                "weight": 1
+            },
+            {
+                "node": "Hall 3",
+                "weight": 1
+            }
+        ],
+        "type": "hall"
+    },
+    "Hall 5": {
+        "name": "Hall 5",
+        "edges": [
+            {
+                "node": "Hall 6",
+                "weight": 1
+            },
+            {
+                "node": "710",
+                "weight": 1
+            },
+            {
+                "node": "709",
+                "weight": 1
+            },
+            {
+                "node": "Hall 4",
+                "weight": 1
+            }
+        ],
+        "type": "hall"
+    },
+    "Hall 6": {
+        "name": "Hall 6",
+        "edges": [
+            {
+                "node": "Hall 7",
+                "weight": 1
+            },
+            {
+                "node": "708",
+                "weight": 1
+            },
+            {
+                "node": "707",
+                "weight": 1
+            },
+            {
+                "node": "Hall 5",
+                "weight": 1
+            }
+        ],
+        "type": "hall"
+    },
+    "Hall 7": {
+        "name": "Hall 7",
+        "edges": [
+            {
+                "node": "702",
+                "weight": 1
+            },
+            {
+                "node": "Stair 2",
+                "weight": 1
+            },
+            {
+                "node": "Hall 6",
+                "weight": 1
+            }
+        ],
+        "type": "hall"
+    }
+}

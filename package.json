@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "priorityqueue": "^2.0.0"
+  }
+}

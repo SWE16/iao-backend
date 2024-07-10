@@ -6,63 +6,59 @@ require('dotenv').config();
 class Database {
     constructor() {
         this.uri = `mongodb+srv://insandouts-api:${process.env.MONGODB_PASS}@general.wfuxmik.mongodb.net/?appName=General`;
+    }
 
-        this.client = new MongoClient(this.uri);
+    async getConnectedClient() {
+        return new MongoClient(this.uri).connect();
     }
 
     async findOne(query) {
+        let client = await this.getConnectedClient();
+
         try {
-            this.client.connect().then(() => {
-                this.client
-                    .db('insandouts')
-                    .collection('maps')
-                    .findOne(query)
-                    .then((result) => {
-                        if (result) {
-                            return { ok: true, res: result };
-                        } else {
-                            return { ok: false, res: result };
-                        }
-                    });
-            });
+            let result = await client
+                .db('insandouts')
+                .collection('maps')
+                .findOne(query);
+
+            if (result) {
+                return { ok: true, res: result };
+            } else {
+                return { ok: false, res: result };
+            }
         } catch (err) {
             console.error(err);
         } finally {
-            await this.client.close();
+            await client.close();
         }
     }
 
     async createMap(newMap) {
+        let client = await this.getConnectedClient();
         try {
-            this.client.connect().then(() => {
-                let new_uuid = uuidv4();
+            let new_uuid = uuidv4();
 
-                // true means it found the same uuid already so it cannot be used again
-                while (this.findOne({ uuid: new_uuid }).ok) {
-                    new_uuid = uuidv4();
-                }
+            // true means it found the same uuid already so it cannot be used again
+            while (this.findOne({ uuid: new_uuid }).ok) {
+                new_uuid = uuidv4();
+            }
 
-                newMap.uuid = new_uuid;
+            newMap['uuid'] = new_uuid;
 
-                console.log(new_uuid);
+            let result = await client
+                .db('insandouts')
+                .collection('maps')
+                .insertOne(newMap);
 
-                this.client
-                    .db('insandouts')
-                    .collection('maps')
-                    .insertOne(newMap)
-                    .then((result) => {
-                        console.log(result);
-                        if (result) {
-                            return { ok: true, res: result };
-                        } else {
-                            return { ok: false, res: result };
-                        }
-                    });
-            });
+            if (result) {
+                return { ok: true, res: result };
+            } else {
+                return { ok: false, res: result };
+            }
         } catch (err) {
             console.error(err);
         } finally {
-            await this.client.close();
+            await client.close();
         }
     }
 }
@@ -74,7 +70,8 @@ class Database {
         uuid: 'e8f2ada4-56cf-4fcb-8405-bf0549f7d410',
     });
 
-    //const result = await d.createMap({ test_data: 'testing' });
-    console.log(result);
-    // console.log(result.res.insertedId);
+    console.log(result.res);
+
+    // const result = await d.createMap({ test_data: 'chat is this real?' });
+    // console.log(result.res);
 })();

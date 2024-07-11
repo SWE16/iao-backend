@@ -35,6 +35,7 @@ class Database {
 
     async createMap(newMap) {
         let client = await this.getConnectedClient();
+
         try {
             let new_uuid = uuidv4();
 
@@ -61,6 +62,28 @@ class Database {
             await client.close();
         }
     }
+
+    // filter is usally the uuid
+    async updateMap(filter, updatedMap) {
+        let client = await this.getConnectedClient();
+
+        try {
+            let result = await client
+                .db('insandouts')
+                .collection('maps')
+                .updateOne(filter, { $set: updatedMap });
+
+            if (result) {
+                return { ok: true, res: result };
+            } else {
+                return { ok: false, res: result };
+            }
+        } catch (err) {
+            console.error(err);
+        } finally {
+            await client.close();
+        }
+    }
 }
 
 (async () => {
@@ -74,4 +97,17 @@ class Database {
 
     // const result = await d.createMap({ test_data: 'chat is this real?' });
     // console.log(result.res);
+
+    // const result = await d.updateMap(
+    //     { uuid: 'e8f2ada4-56cf-4fcb-8405-bf0549f7d410' },
+    //     {
+    //         test_key: 'testing so good',
+    //     }
+    // );
+
+    // console.log(result.res);
 })();
+
+module.exports = {
+    Database: Database,
+};

@@ -86,27 +86,27 @@ class Database {
     }
 }
 
-(async () => {
-    d = new Database();
+// (async () => {
+//     d = new Database();
 
-    const result = await d.findOne({
-        uuid: 'e8f2ada4-56cf-4fcb-8405-bf0549f7d410',
-    });
+//     const result = await d.findOne({
+//         uuid: 'e8f2ada4-56cf-4fcb-8405-bf0549f7d410',
+//     });
 
-    console.log(result.res);
+//     console.log(result.res);
 
-    // const result = await d.createMap({ test_data: 'chat is this real?' });
-    // console.log(result.res);
+//     // const result = await d.createMap({ test_data: 'chat is this real?' });
+//     // console.log(result.res);
 
-    // const result = await d.updateMap(
-    //     { uuid: 'e8f2ada4-56cf-4fcb-8405-bf0549f7d410' },
-    //     {
-    //         test_key: 'testing so good',
-    //     }
-    // );
+//     // const result = await d.updateMap(
+//     //     { uuid: 'e8f2ada4-56cf-4fcb-8405-bf0549f7d410' },
+//     //     {
+//     //         test_key: 'testing so good',
+//     //     }
+//     // );
 
-    // console.log(result.res);
-})();
+//     // console.log(result.res);
+// })();
 
 module.exports = {
     Database: Database,

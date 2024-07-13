@@ -9,33 +9,34 @@ app.use(cors());
 
 const port = 3001;
 
-app.get('/', (req, res) => {
+app.post('/', (req, res) => {
+    console.log(req.body);
     res.send({
         message: 'Hello World from Express API backend!',
     });
 });
 
-app.get('/save-map', (req, res) => {
+app.post('/save-map', (req, res) => {
     res.send({
         message: 'Saving Map!',
     });
 });
 
-app.get('/update-path', (req, res) => {
+app.post('/update-map', (req, res) => {
     res.send({
-        message: 'Updating Path!',
+        message: 'Updating Map!',
+    });
+});
+
+app.post('/delete-map', (req, res) => {
+    res.sendFile({
+        message: 'Deleting Map!',
     });
 });
 
 app.get('/get-path', (req, res) => {
     res.send({
         message: 'Getting Path!',
-    });
-});
-
-app.get('/delete-path', (req, res) => {
-    res.sendFile({
-        message: 'Hello World from Express API backend!',
     });
 });
 

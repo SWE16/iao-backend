@@ -8,6 +8,10 @@ class Database {
         this.uri = `mongodb+srv://insandouts-api:${process.env.MONGODB_PASS}@general.wfuxmik.mongodb.net/?appName=General`;
     }
 
+    ping() {
+        console.log('pong');
+    }
+
     async getConnectedClient() {
         return new MongoClient(this.uri).connect();
     }

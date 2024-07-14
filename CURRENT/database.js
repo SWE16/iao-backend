@@ -56,7 +56,7 @@ class Database {
                 .insertOne(newMap);
 
             if (result) {
-                return { ok: true, res: result };
+                return { ok: true, res: result, uuid: new_uuid };
             } else {
                 return { ok: false, res: result };
             }

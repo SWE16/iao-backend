@@ -16,7 +16,7 @@ class Database {
         return new MongoClient(this.uri).connect();
     }
 
-    async findOne(query) {
+    async findMap(query) {
         let client = await this.getConnectedClient();
 
         try {
@@ -44,7 +44,7 @@ class Database {
             let new_uuid = uuidv4();
 
             // true means it found the same uuid already so it cannot be used again
-            while (this.findOne({ uuid: new_uuid }).ok) {
+            while (this.findMap({ uuid: new_uuid }).ok) {
                 new_uuid = uuidv4();
             }
 
@@ -93,7 +93,7 @@ class Database {
 // (async () => {
 //     d = new Database();
 
-//     const result = await d.findOne({
+//     const result = await d.findMap({
 //         uuid: 'e8f2ada4-56cf-4fcb-8405-bf0549f7d410',
 //     });
 

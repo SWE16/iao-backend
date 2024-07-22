@@ -42,10 +42,24 @@ app.post('/save-map', async (req, res) => {
     }
 });
 
-app.post('/update-map', (req, res) => {
-    res.send({
-        message: 'Updating Map!',
-    });
+app.post('/update-map', async (req, res) => {
+    const result = await db.updateMap(req.body.uuid, req.body.new);
+
+    if (result.ok) {
+        res.send({ ok: true, uuid: result.uuid });
+    } else {
+        res.send({ ok: false });
+    }
+});
+
+app.post('/find-map', async (req, res) => {
+    const result = await db.updateMap(req.body.uuid);
+
+    if (result.ok) {
+        res.send({ ok: true, uuid: result.uuid });
+    } else {
+        res.send({ ok: false });
+    }
 });
 
 app.post('/delete-map', (req, res) => {

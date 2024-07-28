@@ -37,7 +37,7 @@ app.post('/save-map', async (req, res) => {
     const result = await db.createMap(req.body);
 
     if (result.ok) {
-        res.send({ ok: true, uusid: result.uuid });
+        res.send({ ok: true, uuid: result.uuid });
     } else {
         res.send({ ok: false });
     }

@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 
 const { Database } = require('./database');
+const { searchLinder } = require('./new_graph');
 
 const app = express();
 
@@ -36,14 +37,14 @@ app.post('/save-map', async (req, res) => {
     const result = await db.createMap(req.body);
 
     if (result.ok) {
-        res.send({ ok: true, uuid: result.uuid });
+        res.send({ ok: true, uusid: result.uuid });
     } else {
         res.send({ ok: false });
     }
 });
 
 app.post('/update-map', async (req, res) => {
-    const result = await db.updateMap(req.body.uuid, req.body.new);
+    const result = await db.updateMap(req.body.uuid, req.body.updatedMap);
 
     if (result.ok) {
         res.send({ ok: true, uuid: result.uuid });
@@ -63,14 +64,15 @@ app.post('/find-map', async (req, res) => {
 });
 
 app.post('/delete-map', (req, res) => {
-    res.sendFile({
-        message: 'Deleting Map!',
+    res.send({
+        ok: true,
     });
 });
 
-app.get('/get-path', (req, res) => {
+app.get('/get-path', async (req, res) => {
+    const result = await db.findMap({ uuid: req.query.uuid });
     res.send({
-        message: 'Getting Path!',
+        path: searchLinder(result.res.data, req.query.start, req.query.finish),
     });
 });
 

@@ -50,98 +50,26 @@ function getPath(graph, start, finish) {
     return path.concat(graph.adjacencyList[smallest].toString()).reverse();
 }
 
-let graph = new Graph();
+function searchLinder(graphdata, start, finish) {
+    let graph = new Graph();
 
-// graph.addVertex('702', VertexType.ROOM);
-// graph.addVertex('707', VertexType.ROOM);
-// graph.addVertex('708', VertexType.ROOM);
-// graph.addVertex('709', VertexType.ROOM);
-// graph.addVertex('710', VertexType.ROOM);
-// graph.addVertex('716', VertexType.ROOM);
-// graph.addVertex('718', VertexType.ROOM);
-// graph.addVertex('720', VertexType.ROOM);
-// graph.addVertex('719', VertexType.ROOM);
-// graph.addVertex('715', VertexType.ROOM);
-// graph.addVertex('713', VertexType.ROOM);
-// graph.addVertex('717', VertexType.ROOM);
-// graph.addVertex('797', VertexType.ROOM);
-// graph.addVertex('711', VertexType.ROOM);
+    // graph.loadGraph('./LINDHALL/lindhall-with16.json');
 
-// graph.addVertex('Stair 1', VertexType.STAIR);
-// graph.addVertex('Stair 2', VertexType.STAIR);
+    console.log(graphdata);
 
-// graph.addVertex('Hall 1', VertexType.HALL);
-// graph.addVertex('Hall 2', VertexType.HALL);
-// graph.addVertex('Hall 3', VertexType.HALL);
-// graph.addVertex('Hall 4', VertexType.HALL);
-// graph.addVertex('Hall 5', VertexType.HALL);
-// graph.addVertex('Hall 6', VertexType.HALL);
-// graph.addVertex('Hall 7', VertexType.HALL);
+    graph.loadGraphDirect(graphdata);
 
-// graph.addEdge('702', 'Hall 7');
-// graph.addEdge('Stair 2', 'Hall 7');
-// graph.addEdge('Hall 7', 'Hall 6');
+    console.log(graph.adjacencyList);
 
-// graph.addEdge('708', 'Hall 6');
-// graph.addEdge('707', 'Hall 6');
-// graph.addEdge('Hall 6', 'Hall 5');
+    const result = getPath(graph, start, finish);
 
-// graph.addEdge('710', 'Hall 5');
-// graph.addEdge('709', 'Hall 5');
-// graph.addEdge('Hall 5', 'Hall 4');
+    console.log(result);
 
-// graph.addEdge('716', 'Hall 4');
-// graph.addEdge('711', 'Hall 4');
-// graph.addEdge('Hall 4', 'Hall 3');
+    if (result.length == 1) {
+        return ['Error: Rooms Not Connected'];
+    }
 
-// graph.addEdge('713', 'Hall 3');
-// graph.addEdge('715', 'Hall 3');
-// graph.addEdge('797', 'Hall 3');
-// graph.addEdge('Hall 3', 'Hall 2');
+    return result;
+}
 
-// graph.addEdge('718', 'Hall 2');
-// graph.addEdge('717', 'Hall 2');
-// graph.addEdge('Hall 2', 'Hall 1');
-
-// graph.addEdge('719', 'Hall 1');
-// graph.addEdge('720', 'Hall 1');
-// graph.addEdge('Hall 2', 'Stair 1');
-
-// graph.saveGraph('./saved_graphs/swift7');
-// graph.loadGraph('./saved_graphs/swift7');
-
-// graph.addVertex('Stair 1', VertexType.STAIR);
-
-// graph.addVertex('Hall 1', VertexType.HALL);
-// graph.addVertex('Hall 2', VertexType.HALL);
-// graph.addVertex('Hall 3', VertexType.HALL);
-
-// for (let i in [
-//     '641',
-//     '643',
-//     '645',
-//     '646',
-//     '647',
-//     '648',
-//     '649',
-//     '650',
-//     '652',
-//     '653',
-//     '655',
-//     '658',
-//     '660',
-//     '661',
-//     '662',
-//     '664',
-//     '655',
-// ]) {
-//     graph.addVertex(i, VertexType.ROOM);
-// }
-
-console.log();
-
-// graph.saveGraph('./saved_graphs/swift7');
-graph.loadGraph('./saved_graphs/lindhall-00.json');
-// graph.loadGraph('./saved_graphs/swift7');
-
-console.log(getPath(graph, '0060', '0014'));
+module.exports = { searchLinder };

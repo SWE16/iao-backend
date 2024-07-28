@@ -64,7 +64,21 @@ class Graph {
 
             for (let vertex in this.adjacencyList) {
                 this.adjacencyList[vertex].toString = function () {
-                    return `${this.name} (${this.type}) `;
+                    return `${this.name}`;
+                };
+            }
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
+    loadGraphDirect(data) {
+        try {
+            this.adjacencyList = JSON.parse(data);
+
+            for (let vertex in this.adjacencyList) {
+                this.adjacencyList[vertex].toString = function () {
+                    return `${this.name}`;
                 };
             }
         } catch (err) {

@@ -75,7 +75,7 @@ class Database {
             let result = await client
                 .db('insandouts')
                 .collection('maps')
-                .updateOne(filter, { $set: updatedMap });
+                .updateOne({ uuid: filter }, { $set: { data: updatedMap } });
 
             if (result) {
                 return { ok: true, res: result };

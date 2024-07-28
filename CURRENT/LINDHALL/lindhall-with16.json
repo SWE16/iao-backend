@@ -1,0 +1,205 @@
+{
+    "0499S": {
+        "name": "0499S",
+        "type": "hall",
+        "edges": [
+            { "name": "0499W", "direction": "left", "weight": "1" },
+            { "name": "0499N", "direction": "straight", "weight": "1" },
+            { "name": "0399W", "direction": "right", "weight": "1" },
+            { "name": "0071", "direction": "right", "weight": "1337" },
+            { "name": "0073", "direction": "right", "weight": "1337" },
+            { "name": "0075", "direction": "right", "weight": "1337" },
+            { "name": "0498A", "direction": "straight", "weight": "1" },
+            { "name": "0399S", "direction": "left", "weight": "1" }
+        ]
+    },
+    "0016": {
+        "name": "0016",
+        "type": "room",
+        "edges": [{ "name": "0399S", "direction": "right", "weight": "1" }]
+    },
+    "0014": {
+        "name": "0014",
+        "type": "room",
+        "edges": [{ "name": "0399S", "direction": "left", "weight": "1" }]
+    },
+    "0060": {
+        "name": "0060",
+        "type": "room",
+        "edges": [{ "name": "0499W", "direction": "straight", "weight": "1" }]
+    },
+    "0499W": {
+        "name": "0499W",
+        "type": "hall",
+        "edges": [
+            { "name": "0499S", "direction": "right", "weight": "1" },
+            { "name": "0060", "direction": "straight", "weight": "1337" },
+            { "name": "0498B", "direction": "right", "weight": "1" },
+            { "name": "0070", "direction": "left", "weight": "1337" },
+            { "name": "0499N", "direction": "left", "weight": "1" },
+            { "name": "0399W", "direction": "straight", "weight": "1" }
+        ]
+    },
+    "0498B": {
+        "name": "0498B",
+        "type": "stair",
+        "edges": [{ "name": "0499N", "direction": "left", "weight": "1" }]
+    },
+    "0070": {
+        "name": "0070",
+        "type": "room",
+        "edges": [{ "name": "0499W", "direction": "straight", "weight": "1" }]
+    },
+    "0499N": {
+        "name": "0499N",
+        "type": "hall",
+        "edges": [
+            { "name": "0499W", "direction": "right", "weight": "1" },
+            { "name": "0499S", "direction": "straight", "weight": "1" },
+            { "name": "0399W", "direction": "left", "weight": "1" }
+        ]
+    },
+    "0399W": {
+        "name": "0399W",
+        "type": "hall",
+        "edges": [
+            { "name": "0050", "direction": "left", "weight": "1337" },
+            { "name": "0040", "direction": "left", "weight": "1337" },
+            { "name": "0023", "direction": "right", "weight": "1337" },
+            { "name": "0025", "direction": "right", "weight": "1337" },
+            { "name": "0027", "direction": "right", "weight": "1337" },
+            { "name": "0029", "direction": "right", "weight": "1337" },
+            { "name": "0031", "direction": "right", "weight": "1337" },
+            { "name": "0499S", "direction": "left", "weight": "1" },
+            { "name": "0499N", "direction": "right", "weight": "1" }
+        ]
+    },
+    "0050": {
+        "name": "0050",
+        "type": "room",
+        "edges": [
+            { "name": "0399W", "direction": "left", "weight": "1" },
+            { "name": "0499S", "direction": "right", "weight": "1" }
+        ]
+    },
+    "0040": {
+        "name": "0040",
+        "type": "room",
+        "edges": [
+            { "name": "0399W", "direction": "right", "weight": "1" },
+            { "name": "0399N", "direction": "left", "weight": "1" }
+        ]
+    },
+    "0399N": {
+        "name": "0399N",
+        "type": "hall",
+        "edges": [
+            { "name": "0399W", "direction": "right", "weight": "1" },
+            { "name": "0036", "direction": "right", "weight": "1337" }
+        ]
+    },
+    "0036": {
+        "name": "0036",
+        "type": "room",
+        "edges": [{ "name": "0399N", "direction": "left", "weight": "1" }]
+    },
+    "0031": {
+        "name": "0031",
+        "type": "room",
+        "edges": [
+            { "name": "0399W", "direction": "left", "weight": "1" },
+            { "name": "0399N", "direction": "right", "weight": "1" }
+        ]
+    },
+    "0029": {
+        "name": "0029",
+        "type": "room",
+        "edges": [
+            { "name": "0399W", "direction": "left", "weight": "1" },
+            { "name": "0399N", "direction": "right", "weight": "1" }
+        ]
+    },
+    "0027": {
+        "name": "0027",
+        "type": "room",
+        "edges": [
+            { "name": "0399N", "direction": "right", "weight": "1" },
+            { "name": "0399W", "direction": "left", "weight": "1" }
+        ]
+    },
+    "0025": {
+        "name": "0025",
+        "type": "room",
+        "edges": [
+            { "name": "0399W", "direction": "right", "weight": "1" },
+            { "name": "0499S", "direction": "left", "weight": "1" }
+        ]
+    },
+    "0023": {
+        "name": "0023",
+        "type": "room",
+        "edges": [
+            { "name": "0399W", "direction": "right", "weight": "1" },
+            { "name": "0499S", "direction": "left", "weight": "1" }
+        ]
+    },
+    "0071": {
+        "name": "0071",
+        "type": "room",
+        "edges": [
+            { "name": "0499W", "direction": "left", "weight": "1" },
+            { "name": "0499N", "direction": "left", "weight": "1" },
+            { "name": "0499S", "direction": "right", "weight": "1" }
+        ]
+    },
+    "0073": {
+        "name": "0073",
+        "type": "room",
+        "edges": [
+            { "name": "0499W", "direction": "left", "weight": "1" },
+            { "name": "0499N", "direction": "left", "weight": "1" },
+            { "name": "0499S", "direction": "right", "weight": "1" }
+        ]
+    },
+    "0075": {
+        "name": "0075",
+        "type": "room",
+        "edges": [
+            { "name": "0499S", "direction": "left", "weight": "1" },
+            { "name": "0498A", "direction": "right", "weight": "1" },
+            { "name": "0399S", "direction": "straight", "weight": "1" }
+        ]
+    },
+    "0075A": {
+        "name": "0075A",
+        "type": "room",
+        "edges": [{ "name": "0075", "direction": "straight", "weight": "1" }]
+    },
+    "0498A": {
+        "name": "0498A",
+        "type": "stair",
+        "edges": [
+            { "name": "0499S", "direction": "straight", "weight": "1" },
+            { "name": "0399S", "direction": "right", "weight": "1" }
+        ]
+    },
+    "0399S": {
+        "name": "0399S",
+        "type": "hall",
+        "edges": [
+            { "name": "0020", "direction": "left", "weight": "1" },
+            { "name": "0018", "direction": "left", "weight": "1" },
+            { "name": "0016", "direction": "straight", "weight": "1" },
+            { "name": "0014", "direction": "straight", "weight": "1" },
+            { "name": "0080", "direction": "right", "weight": "1" },
+            { "name": "0097A", "direction": "right", "weight": "1" },
+            { "name": "0097B", "direction": "right", "weight": "1" },
+            { "name": "0097C", "direction": "right", "weight": "1" },
+            { "name": "0012A", "direction": "right", "weight": "1" },
+            { "name": "0012B", "direction": "right", "weight": "1" },
+            { "name": "0012C", "direction": "right", "weight": "1" },
+            { "name": "0012D", "direction": "right", "weight": "1" },
+            { "name": "0012E", "direction": "right", "weight": "1" }
+        ]
+    }
+}
